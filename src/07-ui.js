@@ -1114,7 +1114,7 @@ function boot() {
     $('startBtn').textContent = 'Fortsett jakt'; $('newBtn').hidden = false;
     setText('saveTxt', 'Lagret jakt: dag ' + G.day + ' · ' + fmtKr(G.money) + ' · ' + G.journal.length + ' dyr felt'); $('saveTxt').hidden = false;
   }
-  resize(); bindInput(); netInit();
+  resize(); bindInput(); netInit(); cloudInit();
   // noen dyr i nærheten av bua fra start
   for (let i = 0; i < 3; i++) { const a = rnd(0, TAU), d = rnd(260, 420); const x = P.x + Math.cos(a) * d, y = P.y + Math.sin(a) * d; if (!isWater(x, y) && nearestCabin(x, y).d > 220) spawnAnimal(i === 0 ? 'radyr' : pickSpecies(x, y), x, y); }
   $('loading').hidden = true; $('titleBtns').hidden = false;

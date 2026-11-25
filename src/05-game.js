@@ -263,8 +263,10 @@ function save() {
       // patronene lagres med dem som sitter i våpnene; de lades igjen når du starter
       rounds: G.rounds + inGun('rifle'), shells: G.shells + inGun('hagle'), arrows: G.arrows + inGun('bue'), arms: G.arms, gun: G.gun, seen: seenPack(),
       // hvor du og hesten står, og om du satt i salen
-      pos: [Math.round(P.x), Math.round(P.y), P.face, P.flip], horse: [Math.round(HORSE.x), Math.round(HORSE.y), Math.round(HORSE.h * 100) / 100, HORSE.on],
+      // t: når det ble lagret, så den nyeste av enheten og kontoen kan vinne (se 12-cloud.js)
+      t: Date.now(), pos: [Math.round(P.x), Math.round(P.y), P.face, P.flip], horse: [Math.round(HORSE.x), Math.round(HORSE.y), Math.round(HORSE.h * 100) / 100, HORSE.on],
       huts: old ? old.huts || [] : G.huts.map(h => [Math.round(h.x), Math.round(h.y)]), cut: old ? old.cut || [] : [...G.cut] }));
+    CLOUD.dirty = true; cloudPush();
   } catch (e) { }
 }
 function load() {

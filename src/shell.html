@@ -247,6 +247,8 @@ kbd { font-family: var(--f-lab); font-size: 10px; color: var(--paper); backgroun
 .big:hover { background: #4a5e34; } .big:active { transform: translateY(2px); box-shadow: 0 2px 0 #1b2a20; }
 .ghost { font-size: 15px; padding: 10px 16px; background: rgba(16,24,20,.7); border: 2px solid #44574a; cursor: pointer; }
 #saveTxt { font-size: 14px; color: var(--muted); margin-top: -8px; }
+#acct { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); }
+#acct .ghost { font-size: 13px; padding: 6px 12px; }
 .pause-card { width: min(440px, 100%); }
 .pause-body { padding: 18px 20px 22px; display: grid; gap: 12px; }
 .pause-body p { margin: 0; }
@@ -476,6 +478,7 @@ body.touch #log { top: calc(216px + env(safe-area-inset-top, 0px)); bottom: auto
     <div id="mp"><label class="mp-name">Navnet ditt <input id="nameIn" maxlength="16" autocomplete="off" spellcheck="false"></label><div id="mpTxt" hidden></div></div>
     <div id="titleBtns" hidden><button class="big" id="startBtn" type="button">Gå inn i skogen</button><button class="ghost" id="newBtn" type="button" hidden>Start på nytt</button></div>
     <div id="saveTxt" hidden></div>
+    <div id="acct" hidden><span id="acctTxt"></span><button class="ghost" id="loginBtn" type="button">Logg inn med Google</button></div>
     <div class="t-keys">
       <div><kbd>WASD</kbd>Gå · <kbd>Mus</kbd>snu · <kbd>Shift</kbd>snik</div>
       <div><kbd>Høyreklikk</kbd>Sikt (hold)</div>
