@@ -1088,8 +1088,6 @@ function bindInput() {
   $('keysBtn').onclick = () => pauseSub('keysSheet');
   $('plBtn').onclick = () => { plList(); pauseSub('plSheet'); };
   document.querySelectorAll('[data-back]').forEach(bt => bt.onclick = pauseBack);
-  // MIDLERTIDIG juksekode for testing: fjern knappen (#cheatBtn i shell.html) og denne linja før utgivelse
-  $('cheatBtn').onclick = () => { G.money += 1000; sfx.coin(); msg('Juks: +' + fmtKr(1000), 'money'); save(); };
   $('quitBtn').onclick = () => { save(); location.reload(); };
   $('newBtn').onclick = () => { const bt = $('newBtn'); if (bt.dataset.arm) startGame(true); else { bt.dataset.arm = 1; bt.textContent = 'Sikker? Trykk igjen'; } };
   $('muteBtn').onclick = () => { auInit(); auMute(!AU.muted); $('muteBtn').setAttribute('aria-pressed', AU.muted); };
